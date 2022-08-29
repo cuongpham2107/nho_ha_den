@@ -1,249 +1,521 @@
 @extends('frontend.layouts.default')
 
-@section('content')
+@section('style')
+  <link rel='stylesheet' id='elementor-post-663-css'
+		href='{{asset('assets/uploads/sites/168/elementor/css/post-6638815.css?ver=1653475004') }}' type='text/css'
+		media='all' />
+  <link rel='stylesheet' id='hello-elementor-css'
+		href='{{asset('assets/themes/hello-elementor/style.min0875.css?ver=2.5.0') }}' type='text/css' media='all' />
 
-  <div id="breadcrumbs" class="flexbox-container ">
-    <div class="breadcrumb-inner">
-      <div class="container">
-        <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-          <a href="{{ asset('/') }}" title="general.breadcrumbs.home_link_title">Trang chủ /</a>
-          <span class="revicon-angle-right"></span>
-          <span>{{ $title }}</span>
-        </nav>
-      </div>
-    </div>
-  </div>
-
-  <!-- Content2 -->
   <style>
-    .c2-about h3 {
-      margin-bottom: 30px;
+    /*! elementor - v3.6.5 - 27-04-2022 */
+    .elementor-widget-image-box .elementor-image-box-content {
+      width: 100%
     }
-    .c2-about p {
-      margin-top: 0 !important;
+
+    @media (min-width:768px) {
+
+      .elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper,
+      .elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+      }
+
+      .elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper {
+        text-align: right;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse
+      }
+
+      .elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper {
+        text-align: left;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row
+      }
+
+      .elementor-widget-image-box.elementor-position-top .elementor-image-box-img {
+        margin: auto
+      }
+
+      .elementor-widget-image-box.elementor-vertical-align-top .elementor-image-box-wrapper {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start
+      }
+
+      .elementor-widget-image-box.elementor-vertical-align-middle .elementor-image-box-wrapper {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+      }
+
+      .elementor-widget-image-box.elementor-vertical-align-bottom .elementor-image-box-wrapper {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end
+      }
+    }
+
+    @media (max-width:767px) {
+      .elementor-widget-image-box .elementor-image-box-img {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 15px
+      }
+    }
+
+    .elementor-widget-image-box .elementor-image-box-img {
+      display: inline-block
+    }
+
+    .elementor-widget-image-box .elementor-image-box-title a {
+      color: inherit
+    }
+
+    .elementor-widget-image-box .elementor-image-box-wrapper {
+      text-align: center
+    }
+
+    .elementor-widget-image-box .elementor-image-box-description {
+      margin: 0
     }
   </style>
-  <div class="container-fluid c2-about" id="c2">
-    <div class="container">
-      <div class="row">      
-        <div class="col-lg-6 col-sm-6 col-md-6">
-          <h3 style="text-align: left;">{{ $about->excerpt }}</h3>
-          {!! $about->body !!}
-        </div>
-        <div class="col-lg-56 col-sm-6 col-md-6">
-          <img src="{{ Voyager::image($about->image) }}" loading="lazy" alt="{{ $about->excerpt }}" style="width: 100%; max-height: 500px; object-fit: cover;">
-        </div>
-      </div>
-    </div>
-  </div>
+@endsection
 
+@section('content')
 
-  @if (count($whys) > 0)
-    <style>
-      .vi-sao .flex {
-        display: flex;
-      }
-      .vi-sao .flex .img {
-        width: 50px;
-        height: 50px;
-        flex: none;
-        overflow: hidden;
-        margin-top: 10px; 
-      }
-      .vi-sao .flex .img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .vi-sao .flex h4 {
-        font-size: 16px !important;
-        font-weight: normal !important;
-        padding: 0 0 0 15px;
-        text-transform: initial !important;
-      }
+<div data-elementor-type="wp-page" data-elementor-id="663" class="elementor elementor-663">
+  <section
+    class="elementor-section elementor-top-section elementor-element elementor-element-47ddced elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+    data-id="47ddced" data-element_type="section"
+    data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"
+    style="background-image: url({{Voyager::image(json_decode($banner->images)[0])}}">
+    <div class="elementor-background-overlay"></div>
+    <div class="elementor-container elementor-column-gap-no">
+      <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-20e4438"
+        data-id="20e4438" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+          <div class="elementor-element elementor-element-4e8c7ce elementor-widget elementor-widget-heading"
+            data-id="4e8c7ce" data-element_type="widget" data-widget_type="heading.default">
+            <div class="elementor-widget-container">
+              <style>
+                /*! elementor - v3.6.5 - 27-04-2022 */
+                .elementor-heading-title {
+                  padding: 0;
+                  margin: 0;
+                  line-height: 1
+                }
 
-      .c-flex {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: stretch;
-      }
+                .elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a {
+                  color: inherit;
+                  font-size: inherit;
+                  line-height: inherit
+                }
 
-      .c-col-3 {
-        /* wi */
-      }
-    </style>
+                .elementor-widget-heading .elementor-heading-title.elementor-size-small {
+                  font-size: 15px
+                }
 
-    <div class="container-fluid" id="c3" style="background: #cfe4ffb5">
-      <div class="container" id="dichvu">
-        <div class="row" style="margin-bottom: 10px;">
-          <div class="col-lg-12 col-sm-12 col-md-12 text-center text-c3">
-            <h3 style="color: #1d64a4;">VÌ SAO LỰA CHỌN GIÚP VIỆC AN PHƯƠNG?</h3>
+                .elementor-widget-heading .elementor-heading-title.elementor-size-medium {
+                  font-size: 19px
+                }
+
+                .elementor-widget-heading .elementor-heading-title.elementor-size-large {
+                  font-size: 29px
+                }
+
+                .elementor-widget-heading .elementor-heading-title.elementor-size-xl {
+                  font-size: 39px
+                }
+
+                .elementor-widget-heading .elementor-heading-title.elementor-size-xxl {
+                  font-size: 59px
+                }
+              </style>
+              <h2 class="elementor-heading-title elementor-size-default">{{$banner->title}}</h2>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-48d965e elementor-widget elementor-widget-text-editor"
+            data-id="48d965e" data-element_type="widget" data-widget_type="text-editor.default">
+            <div class="elementor-widget-container">
+              <style>
+                /*! elementor - v3.6.5 - 27-04-2022 */
+                .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
+                  background-color: #818a91;
+                  color: #fff
+                }
+
+                .elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
+                  color: #818a91;
+                  border: 3px solid;
+                  background-color: transparent
+                }
+
+                .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap {
+                  margin-top: 8px
+                }
+
+                .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter {
+                  width: 1em;
+                  height: 1em
+                }
+
+                .elementor-widget-text-editor .elementor-drop-cap {
+                  float: left;
+                  text-align: center;
+                  line-height: 1;
+                  font-size: 50px
+                }
+
+                .elementor-widget-text-editor .elementor-drop-cap-letter {
+                  display: inline-block
+                }
+              </style>
+              <p>{{$banner->description}}</p>
+            </div>
           </div>
         </div>
-        <div class="c-flex vi-sao">
-          @foreach ($whys as $why)
-            <div class="col-lg-4 col-sm-6 col-12"> 
-              <div class="flex">
-                <div class="img">
-                  <img src="{{ asset('/assets/images/v.png') }}" alt="v">
-                </div>
-                <h4 style="color: initial !important;">{!! $why->description !!}</h4>
-              </div>
-              {{-- <a href="/services/{{ $why->slug }}">
-                <div class="dich-vu text-center">
-                  <div class="dich-vu-img">
-                    <img src="{{ Voyager::image($why->image) }}" alt="{{ $why->title }}" loading="lazy">
-                  </div>
-                  <div class="noi-dung">
-                    <h4>{{ $why->title }}</h4>
-                    <img src="{{ asset('assets/images/thanhvang.webp') }}" alt="" loading="lazy">
-                    <div style="text-align: left;display: flex;justify-content: center;">{!! $why->description !!}</div>
-                  </div>
-                </div>
-              </a> --}}
-            </div>
-          @endforeach
+      </div>
+      <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-93f671a"
+        data-id="93f671a" data-element_type="column">
+        <div class="elementor-widget-wrap">
         </div>
       </div>
     </div>
-  @endif
+  </section>
 
-  {{-- @if (count($personnels) > 0)
-    <style>
-      .nhan-su {
-        margin: 3rem auto;
-      }
-
-      .nhan-su h3 {
-        color: #1d64a4;
-      }
-
-      .nhan-su .slide-item a {
-        display: block;
-
-      }
-      .nhan-su .slide-item a img {
-        width: 100%;
-        height: auto;
-      }
-
-      .nhan-su .c-text {
-        position: absolute;
-        bottom: 2rem;
-        left: 2rem;
-        right: 2rem;
-        padding: 1rem;
-        border-radius: 4px;
-        background: #2a8ce5cc;
-        color: #fff;
-      }
-
-      .nhan-su .slide-item {
-        position: relative;
-        width: 100%;
-      }
-
-      .nhan-su .c-text h2 {
-        font-size: 18px;
-      }
-
-      .nhan-su .swiper-button-prev,
-      .nhan-su .swiper-button-next
-      {
-        visibility: hidden;
-        background: #ffffffad;
-        border-radius: 50%;
-        width: 50px;
-        font-size: 10px;
-        height: 50px;
-        --swiper-navigation-size: 27px;
-        transform: translateX(calc(var(--x) * 1rem));
-        opacity: 0;
-        transition: all .3s ease-in-out;
-      }
-
-      .nhan-su .swiper-button-prev:hover,
-      .nhan-su .swiper-button-next:hover {
-        background: #1d64a4bd;
-        color: #fff;
-      }
-
-      .nhan-su .swiper:hover .swiper-button-prev,
-      .nhan-su .swiper:hover .swiper-button-next
-      {
-        visibility: visible;
-        transform: translateX(0);
-        opacity: 1;
-      }
-    </style>
-
-    <div class="container nhan-su">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="padding-bottom: 2rem;">
-    
-          <h3 class="h3 logo">NGUỒN NHÂN SỰ</h3>
-    
-        </div>
-        <div class="col-12 col-lg-11" style="margin: 2rem auto; float: initial;">
-          <div id="personnel" class="swiper" style="width: 100%;">
-            <div class="swiper-wrapper">
-    
-              @foreach ($personnels as $personnel)
-                <div class="swiper-slide">
-                  <div class="slide-item">
-                    @php
-                      $img_temp = explode('.',$personnel->image);
-                      $img_url = $img_temp[0].'-cropped.'.$img_temp[1];
-                    @endphp
-                    <a href="#">
-                      <img src="{{ Voyager::image($img_url) }}" class="img-responsive" alt="{{ $personnel->title }}" loading="lazy">
-                    </a>
-
-                    <div class="c-text">
-                      <h2>{{ $personnel->name }}</h2>
-                      <p>{{ $personnel->position }}</p>
+  @if($banner2 != null)
+  <section
+    class="elementor-section elementor-top-section elementor-element elementor-element-2d059425 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+    data-id="2d059425" data-element_type="section">
+    <div class="elementor-container elementor-column-gap-no">
+      <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1a0bcfde"
+        data-id="1a0bcfde" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+          <section
+            class="elementor-section elementor-inner-section elementor-element elementor-element-5b294b19 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+            data-id="5b294b19" data-element_type="section">
+            <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-164875da"
+                data-id="164875da" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-449b8057 elementor-widget elementor-widget-heading"
+                    data-id="449b8057" data-element_type="widget"
+                    data-widget_type="heading.default">
+                    <div class="elementor-widget-container">
+                      <h2 class="elementor-heading-title elementor-size-default">{{$banner2->title}}</h2>
+                    </div>
+                  </div>
+                  <div class="elementor-element elementor-element-cd3db8c elementor-widget elementor-widget-text-editor"
+                    data-id="cd3db8c" data-element_type="widget"
+                    data-widget_type="text-editor.default">
+                    <div class="elementor-widget-container">{{$banner2->description}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="elementor-section elementor-inner-section elementor-element elementor-element-73ac03c7 animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+            data-id="73ac03c7" data-element_type="section"
+            data-settings="{&quot;animation&quot;:&quot;fadeInRight&quot;}">
+            <div class="elementor-container elementor-column-gap-default">
+              @foreach ($qualities as $quality)
+                <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-7e91c072"
+                data-id="7e91c072" data-element_type="column">
+                  <div class="elementor-widget-wrap elementor-element-populated">
+                    <div class="elementor-element elementor-element-9d1ec7f elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                      data-id="9d1ec7f" data-element_type="widget"
+                      data-widget_type="image-box.default">
+                      <div class="elementor-widget-container">
+                        <div class="elementor-image-box-wrapper">
+                          <figure class="elementor-image-box-img"><img width="281"
+                              height="270"
+                              src="{{Voyager::image($quality->image)}}"
+                              class="attachment-full size-full" alt=""
+                              loading="lazy" /></figure>
+                          <div class="elementor-image-box-content">
+                            <h3 class="elementor-image-box-title">{{$quality->title}}</h3>
+                            <p class="elementor-image-box-description">{{$quality->description}}</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               @endforeach
-    
-              <!--  Example item end -->
             </div>
-            <div class="swiper-button-prev" style="--x: 1" href="#theCarousel" data-slide="prev"></div>
-            <div class="swiper-button-next" style="--x: -1" href="#theCarousel" data-slide="next"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  @endif
+
+  <section
+    class="elementor-section elementor-top-section elementor-element elementor-element-24c648f elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+    data-id="24c648f" data-element_type="section">
+    <div class="elementor-container elementor-column-gap-no">
+      <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-077b304"
+        data-id="077b304" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+          <div class="elementor-element elementor-element-9bf96d7 elementor-widget elementor-widget-heading"
+            data-id="9bf96d7" data-element_type="widget" data-widget_type="heading.default">
+            <div class="elementor-widget-container">
+              <h2 class="elementor-heading-title elementor-size-default">Về chúng tôi</h2>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-e2c04cf elementor-widget elementor-widget-heading"
+            data-id="e2c04cf" data-element_type="widget" data-widget_type="heading.default">
+            <div class="elementor-widget-container">
+              <h2 class="elementor-heading-title elementor-size-default">{{ $about->title }}</h2>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-c086838 elementor-widget elementor-widget-text-editor"
+            data-id="c086838" data-element_type="widget" data-widget_type="text-editor.default">
+            <div class="elementor-widget-container">
+              <p>{{ $about->excerpt }}</p>
+            </div>
+          </div>
+          <section
+            class="elementor-section elementor-inner-section elementor-element elementor-element-279fe01 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+            data-id="279fe01" data-element_type="section">
+            <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7f1fa45"
+                data-id="7f1fa45" data-element_type="column"
+                data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-e2fcf57 elementor-widget elementor-widget-jkit_fun_fact"
+                    data-id="e2fcf57" data-element_type="widget"
+                    data-widget_type="jkit_fun_fact.default">
+                    <div class="elementor-widget-container">
+                      <div
+                        class="jeg-elementor-kit jkit-fun-fact align-center hover-from-left elementor-animation- jeg_module_663_1_62bbb3a2e1df1">
+                        <div class=fun-fact-inner>
+                          <div class="icon elementor-animation-"><i aria-hidden="true"
+                              class="jki jki-badge-light"></i></div>
+                          <div class="content">
+                            <div class="number-wrapper">
+                              <span class="number" data-value="{{ setting('site.experience') }}"
+                                data-animation-duration="3500">0</span>
+                              <sup class="super">+</sup>
+                            </div>
+                            <h2 class="title">Năm kinh nghiệm</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1d06210"
+                data-id="1d06210" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-0b35a50 elementor-widget elementor-widget-heading"
+                    data-id="0b35a50" data-element_type="widget"
+                    data-widget_type="heading.default">
+                    <div class="elementor-widget-container">
+                      <h2 class="elementor-heading-title elementor-size-default">Đánh giá sản phẩm của chúng tôi</h2>
+                    </div>
+                  </div>
+                  <div class="elementor-element elementor-element-ac61e1c elementor-widget elementor-widget-jkit_progress_bar"
+                    data-id="ac61e1c" data-element_type="widget"
+                    data-widget_type="jkit_progress_bar.default">
+                    <div class="elementor-widget-container">
+                      <div
+                        class="jeg-elementor-kit jkit-progress-bar jeg_module_663_2_62bbb3a2e40d6">
+                        <div class="progress-group ">
+                          <div class="progress-skill-bar">
+                            <div class="skill-bar-content"><span
+                                class="skill-title">Chất lượng cá thính</span></div>
+                            <div class="skill-bar">
+                              <div class="skill-track">
+
+                                <div class="number-percentage-wrapper">
+                                  <span class="number-percentage"
+                                    data-value="{{setting('site.quality')}}"
+                                    data-animation-duration="3500">90%</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="elementor-element elementor-element-68831e0 elementor-widget elementor-widget-jkit_progress_bar"
+                    data-id="68831e0" data-element_type="widget"
+                    data-widget_type="jkit_progress_bar.default">
+                    <div class="elementor-widget-container">
+                      <div
+                        class="jeg-elementor-kit jkit-progress-bar jeg_module_663_3_62bbb3a2e4d5a">
+                        <div class="progress-group ">
+                          <div class="progress-skill-bar">
+                            <div class="skill-bar-content"><span
+                                class="skill-title">Kỹ năng nhân viên</span></div>
+                            <div class="skill-bar">
+                              <div class="skill-track">
+
+                                <div class="number-percentage-wrapper">
+                                  <span class="number-percentage"
+                                    data-value="{{setting('site.skill')}}"
+                                    data-animation-duration="3500">80%</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-15f2018"
+        data-id="15f2018" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+          <div class="elementor-element elementor-element-f86fb2a elementor-widget elementor-widget-image"
+            data-id="f86fb2a" data-element_type="widget" data-widget_type="image.default">
+            <div class="elementor-widget-container">
+              <img width="2000" height="1333"
+                src="{{ Voyager::image($about->image) }}"
+                class="attachment-full size-full"
+                alt="{{ $about->title }}"
+                loading="lazy"/>
+            </div>
+          </div>
+          {{-- <section
+            class="elementor-section elementor-inner-section elementor-element elementor-element-4e11a96 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+            data-id="4e11a96" data-element_type="section">
+            <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-99ab6db"
+                data-id="99ab6db" data-element_type="column">
+                <div class="elementor-widget-wrap">
+                </div>
+              </div>
+              <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-f6d6cd9"
+                data-id="f6d6cd9" data-element_type="column"
+                data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-b7811e9 elementor-widget elementor-widget-image"
+                    data-id="b7811e9" data-element_type="widget"
+                    data-widget_type="image.default">
+                    <div class="elementor-widget-container">
+                      <img width="914" height="199"
+                        src="assets/uploads/sites/168/2021/09/signature.png"
+                        class="attachment-full size-full" alt="" loading="lazy"
+                        srcset="assets/uploads/sites/168/2021/09/signature.png 914w, assets/uploads/sites/168/2021/09/signature-300x65.png 300w, assets/uploads/sites/168/2021/09/signature-768x167.png 768w, assets/uploads/sites/168/2021/09/signature-800x174.png 800w"
+                        sizes="(max-width: 914px) 100vw, 914px" />
+                    </div>
+                  </div>
+                  <div class="elementor-element elementor-element-f3ef90c elementor-widget elementor-widget-jkit_heading"
+                    data-id="f3ef90c" data-element_type="widget"
+                    data-widget_type="jkit_heading.default">
+                    <div class="elementor-widget-container">
+                      <div
+                        class="jeg-elementor-kit jkit-heading  align-right align-tablet- align-mobile-left jeg_module_663_4_62bbb3a2e96dc">
+                        <div class="heading-section-title ">
+                          <h2 class="heading-title">George Shaw</h2>
+                        </div>
+                        <h3 class="heading-section-subtitle  style-color">Sometea CEO
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> --}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  @if($home_mid != null)
+  <section
+    class="elementor-section elementor-top-section elementor-element elementor-element-6fee41d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+    data-id="6fee41d" data-element_type="section"
+    data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"
+    style="padding-bottom: 140px;">
+    <div class="elementor-background-overlay"></div>
+    <div class="elementor-container elementor-column-gap-no">
+      <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-12a03ef"
+        data-id="12a03ef" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+          <div class="elementor-element elementor-element-5e3bd24 elementor-widget elementor-widget-heading"
+            data-id="5e3bd24" data-element_type="widget" data-widget_type="heading.default">
+            <div class="elementor-widget-container">
+              <h2 class="elementor-heading-title elementor-size-default">{{$home_mid->title}}</h2>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-961cf9b elementor-widget__width-initial elementor-widget elementor-widget-text-editor"
+            data-id="961cf9b" data-element_type="widget" data-widget_type="text-editor.default">
+            <div class="elementor-widget-container">
+              <p>{{$home_mid->description}}</p>
+            </div>
+          </div>
+          <section
+            class="elementor-section elementor-inner-section elementor-element elementor-element-4383c11 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+            data-id="4383c11" data-element_type="section"
+            data-settings="{&quot;background_background&quot;:&quot;video&quot;,&quot;background_video_link&quot;:&quot;{{ $home_mid->link }}&quot;,&quot;background_video_start&quot;:3}"
+            style="background-image: url({{ Voyager::image(json_decode($home_mid->images)[0]) }})">
+            <div class="elementor-background-video-container elementor-hidden-phone">
+              <div class="elementor-background-video-embed"></div>
+            </div>
+            <div class="elementor-background-overlay"></div>
+            <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-9f82889"
+                data-id="9f82889" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-1aa58b8 elementor-widget elementor-widget-spacer"
+                    data-id="1aa58b8" data-element_type="widget"
+                    data-widget_type="spacer.default">
+                    <div class="elementor-widget-container">
+                      <style>
+                        /*! elementor - v3.6.5 - 27-04-2022 */
+                        .e-container.e-container--row .elementor-spacer-inner {
+                          width: var(--spacer-size)
+                        }
+
+                        .e-container.e-container--column .elementor-spacer-inner,
+                        .elementor-column .elementor-spacer-inner {
+                          height: var(--spacer-size)
+                        }
+                      </style>
+                      <div class="elementor-spacer">
+                        <div class="elementor-spacer-inner"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="elementor-element elementor-element-1499a52 elementor-widget elementor-widget-jkit_video_button"
+            data-id="1499a52" data-element_type="widget"
+            data-widget_type="jkit_video_button.default">
+            <div class="elementor-widget-container">
+              <div class="jeg-elementor-kit jkit-video-button jeg_module_663_5_62bbb3a2ee440"
+                data-autoplay="0" data-loop="0" data-controls="0" data-type="youtube"
+                data-start="0" data-end="0"><a
+                  href="{{ $home_mid->link }}"
+                  class="jkit-video-popup-btn glow-enable"><span
+                    class="icon-position-before"><i aria-hidden="true"
+                      class="jki jki-play-button-light"></i></span></a></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <script type="module">
-      const swiperPerson = new Swiper('#personnel',{
-        // Optional parameters
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-
-        breakpoints: {
-          // when window width is >= 320px
-          550: {
-            slidesPerView: 2,
-            spaceBetween: 20
-          },
-          // when window width is >= 480px
-          998: {
-            slidesPerView: 3,
-            spaceBetween: 30
-          },
-        },
-
-        // Navigation arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-      })
-    </script>
-  @endif --}}
-
+  </section>
+  @endif
+</div>
 @endsection

@@ -5,94 +5,116 @@
 @endphp
 
 <!-- HEADER izi -->
-<div class="header header1">
-  <!-- TOP BAR -->
-  <div class="container" style="padding: .5rem 2rem;">
+<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+  <p class="main-title bhf-hidden" itemprop="headline"><a href="{{route('index')}}"
+      title="Sometea" rel="home">{{setting('site.title')}}</a></p>
+  <div data-elementor-type="wp-post" data-elementor-id="646" class="elementor elementor-646">
+    <section
+      class="elementor-section elementor-top-section elementor-element elementor-element-bcaa3c6 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+      data-id="bcaa3c6" data-element_type="section">
+      <div class="elementor-container elementor-column-gap-no">
+        <div
+          class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-7f24b7b"
+          data-id="7f24b7b" data-element_type="column">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div class="elementor-element elementor-element-bd03a0f elementor-widget elementor-widget-image"
+              data-id="bd03a0f" data-element_type="widget" data-widget_type="image.default">
+              <div class="elementor-widget-container">
+                <style>
+                  /*! elementor - v3.6.5 - 27-04-2022 */
+                  .elementor-widget-image {
+                    text-align: center
+                  }
 
-    <div>
-      <ul class="phone">
-        <li><span class="fa fa-envelope"></span> Mail: {{ setting('site.email') }}</li>
-        <li><span class="fa fa-phone"></span><a href="tel:{{setting('site.phone')}}" style="color: #fff !important;">{{ setting('site.phone') }}</a> - <a href="tel:{{setting('site.phone2')}}" style="color: #fff !important;">{{ setting('site.phone2') }}</a></li>
-      </ul>
-    </div>
-  </div>
+                  .elementor-widget-image a {
+                    display: inline-block
+                  }
 
-</div>
-<header>
-  <div class="main-menu menu-home">
-    <div class="container">
-      <!-- Menu -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid" style="padding: 0;">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <a href="{{ asset('/') }}" class="mobile-logo" style="overflow: hidden;">
-              <img src="{{ \TCG\Voyager\Facades\Voyager::image(setting('site.logo')) }}" alt="{{ setting('site.title') }}" style="filter: brightness(0) invert(1); height: 100%; width: auto" loading="lazy"/>
-            </a>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#" style="height: initial;"></a>
+                  .elementor-widget-image a img[src$=".svg"] {
+                    width: 48px
+                  }
+
+                  .elementor-widget-image img {
+                    vertical-align: middle;
+                    display: inline-block
+                  }
+                </style> <a href="{{route('index')}}"><img width="755" height="193" src="{{ Voyager::image(setting('site.logo')) }}"
+                  class="attachment-full size-full" alt="" loading="lazy"/></a>
+              </div>
+            </div>
           </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="align-items: center; overflow: hidden;padding: 0;">
-            <a href="{{ asset('/') }}" class="logo"><img src="{{ \TCG\Voyager\Facades\Voyager::image(setting('site.logo')) }}" alt="{{ setting('site.title') }}" loading="lazy"/></a>
-
-            {{-- @dd(env('APP_URL')) --}}
-
-            <ul class="nav navbar-nav navbar-right">
-              @foreach ($menu as $item)
-                @if (count($item->children) > 0)
-                  <li class="dropdown">
-                    <a href="{{ asset($item->url) }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $item->title }}<span class="caret"></span></a>
-
-                    <ul class="dropdown-menu">
-                      @foreach ($item->children as $child)
-                        <li>
-                          <a href="{{ asset($child->url) }}">{{ $child->title }}</a>
+        </div>
+        <div
+          class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-0bbe159"
+          data-id="0bbe159" data-element_type="column">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div class="elementor-element elementor-element-3d2b091 elementor-widget elementor-widget-jkit_nav_menu"
+              data-id="3d2b091" data-element_type="widget" data-widget_type="jkit_nav_menu.default">
+              <div class="elementor-widget-container">
+                <div
+                  class="jeg-elementor-kit jkit-nav-menu break-point-tablet submenu-click-title jeg_module_7__62bbb2f6adc86"
+                  data-item-indicator="&lt;i aria-hidden=&quot;true&quot; class=&quot;fas fa-angle-down&quot;&gt;&lt;/i&gt;">
+                  <button class="jkit-hamburger-menu"><i aria-hidden="true" class="fas fa-bars"></i></button>
+                  <div class="jkit-menu-wrapper">
+                    <div class="jkit-menu-container">
+                      <ul id="menu-menu-1" class="jkit-menu jkit-menu-direction-flex jkit-submenu-position-top">
+                        @foreach ($menu as $item)
+                        <li id="menu-item-1095"
+                          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1095">
+                          <a href={{ url($item->url) }}>{{ $item->title }}</a>
                         </li>
-                      @endforeach
-                    </ul>
-                  </li>
-                @else
-                  <li class="@if($item->url == '/'.Route::current()->uri) active @endif">
-                    <a href="{{ asset($item->url) }}">{{ $item->title }}</a>
-                  </li> 
-                @endif
-              @endforeach
-              {{-- <li class="active"><a href="">Trang chủ</a></li>
-              <li class=""><a href="about.html">Giới thiệu</a></li>
-              <li class="dropdown">
-                <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Dịch vụ<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li class=""><a href="/pages/dich-vu-giup-viec-theo-gio">Dịch vụ giúp việc theo giờ cơ bản</a></li>
-                  <li class=""><a href="/pages/quan-gia-4-0">Dịch Vụ Giúp Việc Trọn Gói</a></li>
-                  <li class=""><a href="/pages/dich-vu-tong-ve-sinh-doanh-nghiep">Dịch vụ Tổng vệ sinh Doanh Nghiệp</a></li>
-                  <li class=""><a href="/pages/dich-vu-sap-xep-nha-theo-phong-cach-toi-gian">Dịch vụ sắp xếp nhà theo phong cách tối giản</a></li>
-                  <li class=""><a href="/pages/hometay-condotel">Dịch Vụ Quản Gia cho Homestay và Condotel</a></li>
-                  <li class=""><a href="/pages/dich-vu-giat-rem">Dịch Vụ Giặt Rèm</a></li>
-                  <li class=""><a href="/pages/dich-vu-giat-ghe-sofa-giat-tham-giat-rem">Dịch Vụ Giặt Thảm</a></li>
-                  <li class=""><a href="/pages/dich-vu-giat-ghe-sofa">Dịch Vụ Giặt Ghế Sofa</a></li>
-                  <li class=""><a href="/pages/dich-vu-ve-sinh-sau-xay-dung">Dịch Vụ Vệ Sinh Sau Xây Dựng</a></li>
-                </ul>
-              </li>
-              <li class=""><a href="blogs.html">BLOG</a></li>
-              <li class=""><a href="faq.html">FAQ</a></li>
-              <li class=""><a href="contact.html">Liên hệ đặt dịch vụ</a></li>
-              <li class=""><a href="recruitment.html">TUYỂN DỤNG</a></li> --}}
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-
-
-    </div> <!-- /.container -->
-  </div> <!-- /.main-menu -->
+                        @endforeach
+                        {{-- <li id="menu-item-98"
+                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-98">
+                          <a href="#">Bài viết</a>
+                          <ul class="sub-menu">
+                            <li id="menu-item-1092"
+                              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1092">
+                              <a href="news.html">Bài viết</a>
+                            </li>
+                            <li id="menu-item-1100"
+                              class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1100">
+                              <a href="single-news.html">
+                                Chi tiết bài viết</a>
+                            </li>
+                          </ul>
+                        </li> --}}
+                      </ul>
+                    </div>
+                    <div class="jkit-nav-identity-panel">
+                      <div class="jkit-nav-site-title"><a href="index.html" class="jkit-nav-logo"><img
+                            src="assets/uploads/sites/168/2021/09/somtea-logo-1.png"></a>
+                      </div>
+                      <button class="jkit-close-menu"><i aria-hidden="true" class="fas fa-times"></i></button>
+                    </div>
+                  </div>
+                  <div class="jkit-overlay"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-199d525 elementor-hidden-tablet elementor-hidden-mobile"
+          data-id="199d525" data-element_type="column">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-59d294f elementor-align-right elementor-widget elementor-widget-button"
+              data-id="59d294f" data-element_type="widget" data-widget_type="button.default">
+              <div class="elementor-widget-container">
+                <div class="elementor-button-wrapper">
+                  <a href="{{ route('contact') }}" class="elementor-button-link elementor-button elementor-size-sm"
+                    role="button">
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">Liên hệ</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </header>

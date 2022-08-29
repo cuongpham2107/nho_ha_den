@@ -3,91 +3,51 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Staticdata;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use TCG\Voyager\Models\Category;
+use TCG\Voyager\Models\Page;
+use TCG\Voyager\Models\Post;
 
 class ServiceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+  /**
+   * Display a listing of the resource.
+   *
+   * @return Application|Factory|View|Response
+   */
+  public function index()
+  {
+    $banner = \App\Banner::where('type', 'news')->first();
+    $banner2 = \App\Banner::where('type', 'news2')->first();
+    $posts = Post::where('status','published')->orderBy('created_at', 'desc')->paginate(6);
+    $pageMeta = [
+      'title' => $banner->title ?? null,
+      'meta_description' => $banner->description ?? null,
+      'image' => setting('site.logo'),
+    ];
+    return view('frontend.service.index', compact('banner', 'banner2', 'posts', 'pageMeta'));
+  }
+
+  public function show($slug)
+  {
+    $banner = \App\Banner::where('type', 'post')->first();
+    $post = Post::where('status','published')->where('slug', $slug)->first();
+
+    if ($post == null) {
+      return view('frontend.pages.404');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    $recent_posts = [];
+    $pageMeta = [
+      'title' => $post->title ?? null,
+      'meta_description' => $post->meta_description ?? null,
+      'image' => $post->image,
+    ];
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($slug)
-    {
-      $service= Staticdata::where(['type' => 'linh-vuc', 'slug' => $slug])->first();
-      $title= $service->title ?? "";
-      $pageMeta = [
-        'title' => $title,
-        'meta_description' => $title,
-        'image' => setting('site.logo'),
-      ];
-      return view('frontend.service.detail', compact( 'service', 'title', 'pageMeta'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    return view('frontend.service.show', compact('banner', 'post', 'recent_posts', 'pageMeta'));
+  }
 }

@@ -46,57 +46,27 @@ class CreateSiteMap extends Command
       // add items to the sitemap (url, date, priority, freq)
       $sitemap->add(\URL::to('/'), Carbon::now()->toDateTimeString() , '1.0', 'weekly');
 
-      // get all services from db
-      $services= \DB::table('staticdatas')->where(['type' => 'linh-vuc', 'status' => 'ACTIVE'])->limit(3)->get();
-
-      // add every services to the sitemap
-      foreach ($services as $service)
-      {
-        $sitemap->add(\URL::to('/'). "/services/{$service->slug}", $service->updated_at, '0.9', 'weekly');
-      }
-
       // page in home
-      $sitemap->add(\URL::to('/gioi-thieu'), Carbon::now()->toDateTimeString() , '0.8', 'weekly');
-      $sitemap->add(\URL::to('/lien-he'), Carbon::now()->toDateTimeString() , '0.8', 'weekly');
-      // $sitemap->add(\URL::to('/tuyen-dung'), Carbon::now()->toDateTimeString() , '0.8', 'weekly');
-      $sitemap->add(\URL::to('/hop-tac-doanh-nghiep'), Carbon::now()->toDateTimeString() , '0.8', 'weekly');
-      $sitemap->add(\URL::to('/blogs'), Carbon::now()->toDateTimeString() , '0.8', 'weekly');
+      $sitemap->add(\URL::to('/gioi-thieu'), Carbon::now()->toDateTimeString() , '0.9', 'weekly');
+      $sitemap->add(\URL::to('/lien-he'), Carbon::now()->toDateTimeString() , '0.9', 'weekly');
+      $sitemap->add(\URL::to('/products'), Carbon::now()->toDateTimeString() , '0.9', 'weekly');
 
       // get all page from db
-      $pages = \DB::table('pages')->where('status','active')->orderBy('created_at', 'desc')->get();
+      $posts = \DB::table('posts')->where('status','published')->orderBy('created_at', 'desc')->get();
+      $sitemap->add(\URL::to('/news'), Carbon::now()->toDateTimeString() , '0.8', 'weekly');
 
-      $pagesIgnore = [
-        'about',
-        'about-home',
-        'lien-he',
-        'contact'
-      ];
-
-      foreach ($pages as $page)
-      {
-        if (in_array($page->slug, $pagesIgnore)) {
-          continue;
-        }
-
-        $sitemap->add(\URL::to('/'). "/pages/{$page->slug}", $page->updated_at, '0.8', 'weekly');
-      }
-
-      // get all posts from db
-      $categories = \DB::table('categories')->orderBy('created_at', 'desc')->get();
-
-      // add every post to the sitemap
-      foreach ($categories as $category)
-      {
-        $sitemap->add(\URL::to('/'). "/category/{$category->slug}", $category->updated_at, '0.7', 'weekly');
-      }
-
-      // get all posts from db
-      $posts = \DB::table('posts')->orderBy('created_at', 'desc')->get();
-
-      // add every post to the sitemap
       foreach ($posts as $post)
       {
-        $sitemap->add(\URL::to('/'). "/blogs/{$post->slug}", $post->updated_at, '0.8', 'weekly');
+        $sitemap->add(\URL::to('/'). "/posts/{$post->slug}", $post->updated_at, '0.7', 'weekly');
+      }
+
+      // get all posts from db
+      $works = \DB::table('works')->where('active',1)->orderBy('created_at', 'desc')->get();
+      $sitemap->add(\URL::to('/works'), Carbon::now()->toDateTimeString() , '0.8', 'weekly');
+
+      foreach ($works as $work)
+      {
+        $sitemap->add(\URL::to('/'). "/works/{$work->slug}", $work->updated_at, '0.7', 'weekly');
       }
 
       // generate your sitemap (format, filename)

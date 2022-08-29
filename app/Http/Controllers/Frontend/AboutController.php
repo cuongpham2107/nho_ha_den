@@ -15,87 +15,91 @@ use App\Staticdata;
 
 class AboutController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Application|Factory|View|Response
-     */
-    public function index()
-    {
-        $about= Page::where('slug', 'about')->first();
-        $personnels = Personnel::limit(6)->get();
-        $whys = Staticdata::where(['type' => 'vi-sao', 'status' => 'ACTIVE'])->get();
-        $title= $about->title ?? "Không tìm thấy bài viết";
-        $pageMeta = [
-            'title' => $title,
-            'meta_description' => $about->meta_description
-        ];
-        return view('frontend.aboutUs.index', compact('about', 'title', 'pageMeta', 'personnels', 'whys'));
-    }
+  /**
+   * Display a listing of the resource.
+   *
+   * @return Application|Factory|View|Response
+   */
+  public function index()
+  {
+    $banner = \App\Banner::where('type', 'about')->first();
+    $banner2 = \App\Banner::where('type', 'quality')->where('status', 'ACTIVE')->first();
+    $qualities = \App\Staticdata::where('status', 1)->where('type', 'quality')->get();
+    $about = Page::where(['slug' => 'about', 'status' => 'ACTIVE'])->first();
+    $home_mid = \App\Banner::where('type', 'home_mid')->where('status', 'ACTIVE')->first();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
+    $title = $about->title ?? "Về chúng tôi";
+    $pageMeta = [
+      'title' => $title ?? 'Contact Us',
+      'image' => $about->image ?? '',
+      'meta_description' => $about->meta_description ?? ''
+    ];
+    return view('frontend.aboutUs.index', compact('banner', 'banner2', 'qualities', 'about', 'pageMeta', 'home_mid'));
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return Response
+   */
+  public function create()
+  {
+    //
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return Response
+   */
+  public function store(Request $request)
+  {
+    //
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return Response
+   */
+  public function show($id)
+  {
+    //
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  int  $id
+   * @return Response
+   */
+  public function edit($id)
+  {
+    //
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return Response
+   */
+  public function update(Request $request, $id)
+  {
+    //
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  int  $id
+   * @return Response
+   */
+  public function destroy($id)
+  {
+    //
+  }
 }

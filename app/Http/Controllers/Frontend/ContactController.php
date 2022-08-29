@@ -20,13 +20,14 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $page = Page::where(['slug' => 'contact', 'status' => 'ACTIVE'])->firstOrFail();
-        $title= $page->title ?? "";
+        $banner = \App\Banner::where('type', 'contact')->first();
+        $contact = Page::where(['slug' => 'contact', 'status' => 'ACTIVE'])->first();
+        $title= $banner->title ?? "";
         $pageMeta = [
-            'title' => $title,
-            'meta_description' => $page->meta_description
+            'title' => $title ?? 'Contact Us',
+            'meta_description' => $banner->description
         ];
-        return view('frontend.contact.index', compact('page',  'title', 'pageMeta'));
+        return view('frontend.contact.index', compact('banner', 'pageMeta', 'contact'));
     }
 
     /**

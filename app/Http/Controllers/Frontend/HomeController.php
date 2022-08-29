@@ -25,18 +25,31 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $banners= Banner::where('type', 'banner')->get();
-        $aboutHome = Page::where(['slug' => 'about-home', 'status' => 'ACTIVE'])->first();
-        $achievement = Page::where(['slug' => 'thanh-tuu', 'status' => 'ACTIVE'])->first();
-        $page = Page::where(['slug' => 'home', 'status' => 'ACTIVE'])->first();
-        $aboutUs = Page::where(['slug' => 'about-us-home-page', 'status' => 'ACTIVE'])->first();
-        $posts  =   Post::where('status', 'PUBLISHED')->latest()->limit(3)->get();
-        $products= Product::where('status', 'ACTIVE')->limit(4)->get();
-        $services= Staticdata::where(['type' => 'linh-vuc', 'status' => 'ACTIVE'])->limit(3)->get();
-        $procedures = Staticdata::where(['type' => 'quy-trinh', 'status' => 'ACTIVE'])->get();
-        $partners = Staticdata::where(['type' => 'doi-tac', 'status' => 'ACTIVE'])->get();
+        $banner= Banner::where('type', 'home')->first();
+        $page1 = Page::where(['slug' => 'nguyen-lieu', 'status' => 'ACTIVE'])->first();
+        $page2 = Page::where(['slug' => 'gia-vi', 'status' => 'ACTIVE'])->first();
+        $page3 = Page::where(['slug' => 'thanh-phan', 'status' => 'ACTIVE'])->first();
+        $about = Page::where(['slug' => 'about', 'status' => 'ACTIVE'])->first();
+        $service = Page::where(['slug' => 'services', 'status' => 'ACTIVE'])->first();
+        $services = \App\Service::where('active', 1)->inRandomOrder()->limit(4)->get();
+        $home_mid = Banner::where('type', 'home_mid')->where('status', 'ACTIVE')->first();
+        $product = Page::where(['slug' => 'products', 'status' => 'ACTIVE'])->first();
+        $products = \App\Product::where('status', 'ACTIVE')->limit(5)->get();
+        $report = \App\Staticdata::where('status', 1)->where('slug', 'phan-hoi')->first();
+        $reports = \App\Staticdata::where('status', 1)->where('type', 'report')->get();
+        $banner_number= Banner::where('type', 'banner_number')->first();
+        $numbers= \App\Staticdata::where('status', 1)->where('type', 'number')->get();
+        $posts= Post::where('status', 'PUBLISHED')->latest()->limit(4)->get();
+        // $achievement = Page::where(['slug' => 'thanh-tuu', 'status' => 'ACTIVE'])->first();
+        // $page = Page::where(['slug' => 'home', 'status' => 'ACTIVE'])->first();
+        // $aboutUs = Page::where(['slug' => 'about-us-home-page', 'status' => 'ACTIVE'])->first();
+        // $posts  =   Post::where('status', 'PUBLISHED')->latest()->limit(3)->get();
+        // $products= Product::where('status', 'ACTIVE')->limit(4)->get();
+        // $services= Staticdata::where(['type' => 'linh-vuc', 'status' => 'ACTIVE'])->limit(3)->get();
+        // $procedures = Staticdata::where(['type' => 'quy-trinh', 'status' => 'ACTIVE'])->get();
+        // $partners = Staticdata::where(['type' => 'doi-tac', 'status' => 'ACTIVE'])->get();
 
-        return view('frontend.homepage.index', compact('aboutHome', 'banners', 'achievement', 'page', 'aboutUs', 'posts', 'products', 'services','procedures', 'partners'));
+        return view('frontend.homepage.index', compact('banner', 'page1', 'page2', 'page3', 'about', 'service', 'services', 'home_mid', 'product', 'products', 'report', 'reports', 'banner_number', 'numbers', 'posts'));
     }
 
     /**

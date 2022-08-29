@@ -14,124 +14,40 @@ use TCG\Voyager\Models\Post;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Application|Factory|View|Response
-     */
-    public function index()
-    {
-//        $page = Page::where(['slug' => 'blog', 'status' => 'ACTIVE'])->first();
-        $title= $page->title ?? "Bài viết";
-        $blogs= Post::paginate(12);
-        $pageMeta = [
-            'title' => $title,
-            'meta_description' => $title,
-            'image' => setting('site.logo'),
-        ];
-        return view('frontend.blog.index', compact( 'blogs', 'title', 'pageMeta'));
+  /**
+   * Display a listing of the resource.
+   *
+   * @return Application|Factory|View|Response
+   */
+  public function index()
+  {
+    $banner = \App\Banner::where('type', 'news')->first();
+    $banner2 = \App\Banner::where('type', 'news2')->first();
+    $posts = Post::where('status','published')->orderBy('created_at', 'desc')->paginate(6);
+    $pageMeta = [
+      'title' => $banner->title ?? null,
+      'meta_description' => $banner->description ?? null,
+      'image' => setting('site.logo'),
+    ];
+    return view('frontend.blog.index', compact('banner', 'banner2', 'posts', 'pageMeta'));
+  }
+
+  public function show($slug)
+  {
+    $banner = \App\Banner::where('type', 'post')->first();
+    $post = Post::where('status','published')->where('slug', $slug)->first();
+
+    if ($post == null) {
+      return view('frontend.pages.404');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
+    $recent_posts = [];
+    $pageMeta = [
+      'title' => $post->title ?? null,
+      'meta_description' => $post->meta_description ?? null,
+      'image' => $post->image,
+    ];
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    /**
-     * return redirect to contact blade.
-     */
-    public function blogDetail($slug)
-    {
-
-        $blog= Post::where('slug', $slug)->first();
-        $title= $blog->title ?? "";
-        $recentPost= Post::where('category_id', $blog->category_id)->limit(6)->get();
-        $categories= Category::withCount('posts')->get();
-        $page = [
-            'title' => $title,
-            'meta_description' => $blog->meta_description,
-            'image' => $blog->image,
-        ];
-        return view('frontend.blog.blogDetail', compact('blog', 'title', 'recentPost', 'categories', 'page'));
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Application|Factory|View|Response
-     */
-    public function PostByCategory($slug)
-    {
-        $category = Category::where('slug', $slug)->first();
-        $blogs= Post::where('category_id', $category->id)->paginate(12);
-        $page = [
-            'title' => $category->name,
-            'meta_description' => $category->name,
-            'image' => setting('site.logo'),
-        ];
-        $title = $category->name;
-        return view('frontend.blog.index', compact( 'blogs', 'page', 'title'));
-    }
-
+    return view('frontend.blog.show', compact('banner', 'post', 'recent_posts', 'pageMeta'));
+  }
 }

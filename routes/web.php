@@ -16,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('clear-cache', function () {
     Artisan::call('config:cache');
     Artisan::call('cache:clear');
-//    Artisan::call('view:clear');
-//    Artisan::call('cms:publish:assets');
-//    Artisan::call('storage:link');
+    Artisan::call('view:clear');
+    Artisan::call('storage:link');
     return 'xong';
 });
 
@@ -28,17 +27,14 @@ Route::get('clear-cache', function () {
 
 Route::group([], function (){
     Route::resource('/',\Frontend\HomeController::class);
-    Route::resource('/field',\Frontend\FieldOfActivityController::class);
-    Route::resource('/product',\Frontend\ProductController::class);
-    Route::resource('ticket', \App\Http\Controllers\Frontend\TicketController::class);
-    Route::get('/lien-he',"\App\Http\Controllers\Frontend\ContactController@index")->name('contact');
-    Route::get('/gioi-thieu',"\App\Http\Controllers\Frontend\AboutController@index")->name('about');
-    Route::get('/blogs',"\App\Http\Controllers\Frontend\PostController@index")->name('blogs');
-    Route::get('/blogs/{slug}',"\App\Http\Controllers\Frontend\PostController@blogDetail")->name('blog.detail');
-    Route::get('/category/{slug}',"\App\Http\Controllers\Frontend\PostController@PostByCategory")->name('category');
+    Route::resource('/products',\Frontend\ProductController::class);
+    Route::get('/lien-he',[\App\Http\Controllers\Frontend\ContactController::class, 'index'])->name('contact');
+    Route::get('/gioi-thieu',[\App\Http\Controllers\Frontend\AboutController::class,'index'])->name('about');
+    Route::get('/news', [\App\Http\Controllers\Frontend\PostController::class, 'index'])->name('posts.index');
+    Route::get('/posts/{slug}', [\App\Http\Controllers\Frontend\PostController::class, 'show'])->name('posts.show');
+    Route::resource('/works',\Frontend\WorkController::class);
     Route::resource('pages',\Frontend\PageController::class);
-    Route::resource('services',\Frontend\ServiceController::class);
-    Route::post('/feedback',"\App\Http\Controllers\Frontend\FeedbackController@store")->name('feedback');
+    Route::post('/feedback',[\App\Http\Controllers\Frontend\FeedbackController::class,'store'])->name('feedback');
 
 });
 
