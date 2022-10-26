@@ -1,11 +1,9 @@
-@extends('frontend.layouts.default')
-
-@section('style')
+<?php $__env->startSection('style'); ?>
   <link rel='stylesheet' id='elementor-post-663-css'
-		href='{{asset('assets/uploads/sites/168/elementor/css/post-6638815.css?ver=1653475004') }}' type='text/css'
+		href='<?php echo e(asset('assets/uploads/sites/168/elementor/css/post-6638815.css?ver=1653475004')); ?>' type='text/css'
 		media='all' />
   <link rel='stylesheet' id='hello-elementor-css'
-		href='{{asset('assets/themes/hello-elementor/style.min0875.css?ver=2.5.0') }}' type='text/css' media='all' />
+		href='<?php echo e(asset('assets/themes/hello-elementor/style.min0875.css?ver=2.5.0')); ?>' type='text/css' media='all' />
 
   <style>
     /*! elementor - v3.6.5 - 27-04-2022 */
@@ -85,16 +83,16 @@
       margin: 0
     }
   </style>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div data-elementor-type="wp-page" data-elementor-id="663" class="elementor elementor-663">
   <section
     class="elementor-section elementor-top-section elementor-element elementor-element-47ddced elementor-section-boxed elementor-section-height-default elementor-section-height-default"
     data-id="47ddced" data-element_type="section"
     data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"
-    style="background-image: url({{Voyager::image(json_decode($banner->images)[0])}}">
+    style="background-image: url(<?php echo e(Voyager::image(json_decode($banner->images)[0])); ?>">
     <div class="elementor-background-overlay"></div>
     <div class="elementor-container elementor-column-gap-no">
       <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-20e4438"
@@ -137,7 +135,7 @@
                   font-size: 59px
                 }
               </style>
-              <h2 class="elementor-heading-title elementor-size-default">{{$banner->title}}</h2>
+              <h2 class="elementor-heading-title elementor-size-default"><?php echo e($banner->title); ?></h2>
             </div>
           </div>
           <div class="elementor-element elementor-element-48d965e elementor-widget elementor-widget-text-editor"
@@ -176,7 +174,7 @@
                   display: inline-block
                 }
               </style>
-              <p>{{$banner->description}}</p>
+              <p><?php echo e($banner->description); ?></p>
             </div>
           </div>
         </div>
@@ -189,7 +187,7 @@
     </div>
   </section>
 
-  @if($banner2 != null)
+  <?php if($banner2 != null): ?>
   <section
     class="elementor-section elementor-top-section elementor-element elementor-element-2d059425 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
     data-id="2d059425" data-element_type="section">
@@ -208,13 +206,13 @@
                     data-id="449b8057" data-element_type="widget"
                     data-widget_type="heading.default">
                     <div class="elementor-widget-container">
-                      <h2 class="elementor-heading-title elementor-size-default">{{$banner2->title}}</h2>
+                      <h2 class="elementor-heading-title elementor-size-default"><?php echo e($banner2->title); ?></h2>
                     </div>
                   </div>
                   <div class="elementor-element elementor-element-cd3db8c elementor-widget elementor-widget-text-editor"
                     data-id="cd3db8c" data-element_type="widget"
                     data-widget_type="text-editor.default">
-                    <div class="elementor-widget-container">{{$banner2->description}}</div>
+                    <div class="elementor-widget-container"><?php echo e($banner2->description); ?></div>
                   </div>
                 </div>
               </div>
@@ -225,7 +223,7 @@
             data-id="73ac03c7" data-element_type="section"
             data-settings="{&quot;animation&quot;:&quot;fadeInRight&quot;}">
             <div class="elementor-container elementor-column-gap-default">
-              @foreach ($qualities as $quality)
+              <?php $__currentLoopData = $qualities; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $quality): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-7e91c072"
                 data-id="7e91c072" data-element_type="column">
                   <div class="elementor-widget-wrap elementor-element-populated">
@@ -236,26 +234,26 @@
                         <div class="elementor-image-box-wrapper">
                           <figure class="elementor-image-box-img"><img width="281"
                               height="270"
-                              src="{{Voyager::image($quality->image)}}"
+                              src="<?php echo e(Voyager::image($quality->image)); ?>"
                               class="attachment-full size-full" alt=""
                               loading="lazy" /></figure>
                           <div class="elementor-image-box-content">
-                            <h3 class="elementor-image-box-title">{{$quality->title}}</h3>
-                            <p class="elementor-image-box-description">{{$quality->description}}</p>
+                            <h3 class="elementor-image-box-title"><?php echo e($quality->title); ?></h3>
+                            <p class="elementor-image-box-description"><?php echo e($quality->description); ?></p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              @endforeach
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
           </section>
         </div>
       </div>
     </div>
   </section>
-  @endif
+  <?php endif; ?>
 
   <section
     class="elementor-section elementor-top-section elementor-element elementor-element-24c648f elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
@@ -273,13 +271,13 @@
           <div class="elementor-element elementor-element-e2c04cf elementor-widget elementor-widget-heading"
             data-id="e2c04cf" data-element_type="widget" data-widget_type="heading.default">
             <div class="elementor-widget-container">
-              <h2 class="elementor-heading-title elementor-size-default">{{ $about->title }}</h2>
+              <h2 class="elementor-heading-title elementor-size-default"><?php echo e($about->title); ?></h2>
             </div>
           </div>
           <div class="elementor-element elementor-element-c086838 elementor-widget elementor-widget-text-editor"
             data-id="c086838" data-element_type="widget" data-widget_type="text-editor.default">
             <div class="elementor-widget-container">
-              <p>{{ $about->excerpt }}</p>
+              <p><?php echo e($about->excerpt); ?></p>
             </div>
           </div>
           <section
@@ -301,7 +299,7 @@
                               class="jki jki-badge-light"></i></div>
                           <div class="content">
                             <div class="number-wrapper">
-                              <span class="number" data-value="{{ setting('site.experience') }}"
+                              <span class="number" data-value="<?php echo e(setting('site.experience')); ?>"
                                 data-animation-duration="3500">0</span>
                               <sup class="super">+</sup>
                             </div>
@@ -338,7 +336,7 @@
 
                                 <div class="number-percentage-wrapper">
                                   <span class="number-percentage"
-                                    data-value="{{setting('site.quality')}}"
+                                    data-value="<?php echo e(setting('site.quality')); ?>"
                                     data-animation-duration="3500">90%</span>
                                 </div>
                               </div>
@@ -363,7 +361,7 @@
 
                                 <div class="number-percentage-wrapper">
                                   <span class="number-percentage"
-                                    data-value="{{setting('site.skill')}}"
+                                    data-value="<?php echo e(setting('site.skill')); ?>"
                                     data-animation-duration="3500">80%</span>
                                 </div>
                               </div>
@@ -386,60 +384,19 @@
             data-id="f86fb2a" data-element_type="widget" data-widget_type="image.default">
             <div class="elementor-widget-container">
               <img width="2000" height="1333"
-                src="{{ Voyager::image($about->image) }}"
+                src="<?php echo e(Voyager::image($about->image)); ?>"
                 class="attachment-full size-full"
-                alt="{{ $about->title }}"
+                alt="<?php echo e($about->title); ?>"
                 loading="lazy"/>
             </div>
           </div>
-          {{-- <section
-            class="elementor-section elementor-inner-section elementor-element elementor-element-4e11a96 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-            data-id="4e11a96" data-element_type="section">
-            <div class="elementor-container elementor-column-gap-no">
-              <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-99ab6db"
-                data-id="99ab6db" data-element_type="column">
-                <div class="elementor-widget-wrap">
-                </div>
-              </div>
-              <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-f6d6cd9"
-                data-id="f6d6cd9" data-element_type="column"
-                data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                <div class="elementor-widget-wrap elementor-element-populated">
-                  <div class="elementor-element elementor-element-b7811e9 elementor-widget elementor-widget-image"
-                    data-id="b7811e9" data-element_type="widget"
-                    data-widget_type="image.default">
-                    <div class="elementor-widget-container">
-                      <img width="914" height="199"
-                        src="assets/uploads/sites/168/2021/09/signature.png"
-                        class="attachment-full size-full" alt="" loading="lazy"
-                        srcset="assets/uploads/sites/168/2021/09/signature.png 914w, assets/uploads/sites/168/2021/09/signature-300x65.png 300w, assets/uploads/sites/168/2021/09/signature-768x167.png 768w, assets/uploads/sites/168/2021/09/signature-800x174.png 800w"
-                        sizes="(max-width: 914px) 100vw, 914px" />
-                    </div>
-                  </div>
-                  <div class="elementor-element elementor-element-f3ef90c elementor-widget elementor-widget-jkit_heading"
-                    data-id="f3ef90c" data-element_type="widget"
-                    data-widget_type="jkit_heading.default">
-                    <div class="elementor-widget-container">
-                      <div
-                        class="jeg-elementor-kit jkit-heading  align-right align-tablet- align-mobile-left jeg_module_663_4_62bbb3a2e96dc">
-                        <div class="heading-section-title ">
-                          <h2 class="heading-title">George Shaw</h2>
-                        </div>
-                        <h3 class="heading-section-subtitle  style-color">Sometea CEO
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> --}}
+          
         </div>
       </div>
     </div>
   </section>
 
-  @if($home_mid != null)
+  <?php if($home_mid != null): ?>
   <section
     class="elementor-section elementor-top-section elementor-element elementor-element-6fee41d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
     data-id="6fee41d" data-element_type="section"
@@ -453,20 +410,20 @@
           <div class="elementor-element elementor-element-5e3bd24 elementor-widget elementor-widget-heading"
             data-id="5e3bd24" data-element_type="widget" data-widget_type="heading.default">
             <div class="elementor-widget-container">
-              <h2 class="elementor-heading-title elementor-size-default">{{$home_mid->title}}</h2>
+              <h2 class="elementor-heading-title elementor-size-default"><?php echo e($home_mid->title); ?></h2>
             </div>
           </div>
           <div class="elementor-element elementor-element-961cf9b elementor-widget__width-initial elementor-widget elementor-widget-text-editor"
             data-id="961cf9b" data-element_type="widget" data-widget_type="text-editor.default">
             <div class="elementor-widget-container">
-              <p>{{$home_mid->description}}</p>
+              <p><?php echo e($home_mid->description); ?></p>
             </div>
           </div>
           <section
             class="elementor-section elementor-inner-section elementor-element elementor-element-4383c11 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
             data-id="4383c11" data-element_type="section"
-            data-settings="{&quot;background_background&quot;:&quot;video&quot;,&quot;background_video_link&quot;:&quot;{{ $home_mid->link }}&quot;,&quot;background_video_start&quot;:3}"
-            style="background-image: url({{ Voyager::image(json_decode($home_mid->images)[0]) }})">
+            data-settings="{&quot;background_background&quot;:&quot;video&quot;,&quot;background_video_link&quot;:&quot;<?php echo e($home_mid->link); ?>&quot;,&quot;background_video_start&quot;:3}"
+            style="background-image: url(<?php echo e(Voyager::image(json_decode($home_mid->images)[0])); ?>)">
             <div class="elementor-background-video-container elementor-hidden-phone">
               <div class="elementor-background-video-embed"></div>
             </div>
@@ -506,7 +463,7 @@
               <div class="jeg-elementor-kit jkit-video-button jeg_module_663_5_62bbb3a2ee440"
                 data-autoplay="0" data-loop="0" data-controls="0" data-type="youtube"
                 data-start="0" data-end="0"><a
-                  href="{{ $home_mid->link }}"
+                  href="<?php echo e($home_mid->link); ?>"
                   class="jkit-video-popup-btn glow-enable"><span
                     class="icon-position-before"><i aria-hidden="true"
                       class="jki jki-play-button-light"></i></span></a></div>
@@ -516,6 +473,8 @@
       </div>
     </div>
   </section>
-  @endif
+  <?php endif; ?>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('frontend.layouts.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/cudau/domains/cudau.kennatech.vn/public_html/resources/views/frontend/aboutUs/index.blade.php ENDPATH**/ ?>
