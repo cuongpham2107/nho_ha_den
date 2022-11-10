@@ -21,6 +21,7 @@ class PostController extends Controller
    */
   public function index()
   {
+    
     $banner = \App\Banner::where('type', 'news')->first();
     $banner2 = \App\Banner::where('type', 'news2')->first();
     $posts = Post::where('status','published')->orderBy('created_at', 'desc')->paginate(6);
@@ -34,6 +35,7 @@ class PostController extends Controller
 
   public function show($slug)
   {
+    
     $banner = \App\Banner::where('type', 'post')->first();
     $post = Post::where('status','published')->where('slug', $slug)->first();
 

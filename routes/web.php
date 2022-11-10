@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('clear-cache', function () {
     Artisan::call('config:cache');
     Artisan::call('cache:clear');
-    Artisan::call('view:clear');
-    Artisan::call('storage:link');
+//    Artisan::call('view:clear');
+//    Artisan::call('storage:link');
     return 'xong';
 });
 
@@ -35,7 +35,7 @@ Route::group([], function (){
     Route::resource('/works',\Frontend\WorkController::class);
     Route::resource('pages',\Frontend\PageController::class);
     Route::post('/feedback',[\App\Http\Controllers\Frontend\FeedbackController::class,'store'])->name('feedback');
-
+    Route::get('/stories', [\App\Http\Controllers\Frontend\ServiceController::class,'story']);
 });
 
 Route::group(['prefix' => 'admin'], function () {

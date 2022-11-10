@@ -50,4 +50,20 @@ class ServiceController extends Controller
 
     return view('frontend.service.show', compact('banner', 'post', 'recent_posts', 'pageMeta'));
   }
+  public function story()
+  {
+    $product = Page::where('slug', 'story')->first();
+    // dd($product);
+    $banner = \App\Banner::where('type', 'product')->first();
+    $banner2 = \App\Banner::where('type', 'product2')->first();
+    $title = $product->name ?? "";
+    // $recentProduct = Product::limit(3)->get();
+    //        dd($product);
+    $page = [
+      'title' => $product->name,
+      'meta_description' => $product->meta_description,
+      'image' => $product->image
+    ];
+    return view('frontend.product.story', compact('product', 'title', 'page','banner','banner2'));
+  }
 }

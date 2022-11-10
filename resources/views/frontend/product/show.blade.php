@@ -136,7 +136,7 @@
                     display: inline-block
                   }
                 </style>
-                <p>{{ $banner->description ?? '' }}</p>
+                <!-- <p>{{ $banner->description ?? '' }}</p> -->
               </div>
             </div>
           </div>
@@ -224,7 +224,7 @@
             </div>
             <div class="elementor-element elementor-element-7bb8b0a elementor-widget elementor-widget-text-editor"
               data-id="7bb8b0a" data-element_type="widget" data-widget_type="text-editor.default">
-              <div class="elementor-widget-container">{{ $product->description ?? '' }}</div>
+              <div class="elementor-widget-container" style="font-family: 'Font Awesome 5 Free';">{{ $product->description ?? '' }}</div>
             </div>
             <div
               class="elementor-element elementor-element-faeb4af elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
@@ -322,51 +322,7 @@
       </div>
     </section>
 
-    <section
-      class="elementor-section elementor-top-section elementor-element elementor-element-b93ba26 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-      data-id="b93ba26" data-element_type="section"
-      data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"
-      style="background-image: url({{ Voyager::image(json_decode($banner2->images)[0]) }}">
-      <div class="elementor-background-overlay"></div>
-      <div class="elementor-container elementor-column-gap-no">
-        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-5fd6cbd"
-          data-id="5fd6cbd" data-element_type="column">
-          <div class="elementor-widget-wrap elementor-element-populated">
-            <div class="elementor-element elementor-element-dabdfc7 elementor-widget elementor-widget-heading"
-              data-id="dabdfc7" data-element_type="widget" data-widget_type="heading.default">
-              <div class="elementor-widget-container">
-                <h2 class="elementor-heading-title elementor-size-default">{{ $banner2->title ?? '' }}</h2>
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-2e18335 elementor-widget elementor-widget-text-editor"
-              data-id="2e18335" data-element_type="widget" data-widget_type="text-editor.default">
-              <div class="elementor-widget-container">
-                <p>{{ $banner2->description ?? '' }}</p>
-              </div>
-            </div>
-            <div
-              class="elementor-element elementor-element-f0444e0 elementor-align-left elementor-widget elementor-widget-button"
-              data-id="f0444e0" data-element_type="widget" data-widget_type="button.default">
-              <div class="elementor-widget-container">
-                <div class="elementor-button-wrapper">
-                  <a href="{{ route('contact') }}" class="elementor-button-link elementor-button elementor-size-sm"
-                    role="button">
-                    <span class="elementor-button-content-wrapper">
-                      <span class="elementor-button-text">Liên hệ</span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-38c1b5c"
-          data-id="38c1b5c" data-element_type="column">
-          <div class="elementor-widget-wrap">
-          </div>
-        </div>
-      </div>
-    </section>
+   
 
     <section
       class="elementor-section elementor-top-section elementor-element elementor-element-49ebcd6 elementor-section-boxed elementor-section-height-default elementor-section-height-default"

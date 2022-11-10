@@ -19,160 +19,9 @@
   @endphp
   <div data-elementor-type="wp-page" data-elementor-id="7" class="elementor elementor-7">
     <section
-      class="elementor-section elementor-top-section elementor-element elementor-element-01eb206 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-      style="background-image: url({{ Voyager::image($banner_images[0] ?? '') }});">
-      <div class="elementor-background-overlay"></div>
-      <div class="elementor-container elementor-column-gap-no">
-        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7470e0e"
-          data-id="7470e0e" data-element_type="column"
-          data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
-          <div class="elementor-widget-wrap elementor-element-populated">
-            <div class="elementor-element elementor-element-259f218 elementor-widget elementor-widget-heading"
-              data-id="259f218" data-element_type="widget" data-widget_type="heading.default">
-              <div class="elementor-widget-container">
-                <style>
-                  /*! elementor - v3.6.5 - 27-04-2022 */
-                  .elementor-heading-title {
-                    padding: 0;
-                    margin: 0;
-                    line-height: 1
-                  }
-
-                  .elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a {
-                    color: inherit;
-                    font-size: inherit;
-                    line-height: inherit
-                  }
-
-                  .elementor-widget-heading .elementor-heading-title.elementor-size-small {
-                    font-size: 15px
-                  }
-
-                  .elementor-widget-heading .elementor-heading-title.elementor-size-medium {
-                    font-size: 19px
-                  }
-
-                  .elementor-widget-heading .elementor-heading-title.elementor-size-large {
-                    font-size: 29px
-                  }
-
-                  .elementor-widget-heading .elementor-heading-title.elementor-size-xl {
-                    font-size: 39px
-                  }
-
-                  .elementor-widget-heading .elementor-heading-title.elementor-size-xxl {
-                    font-size: 59px
-                  }
-                </style>
-                <h2 class="elementor-heading-title elementor-size-default">{{ $banner->title ?? '' }}</h2>
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-23c2b1a elementor-widget elementor-widget-text-editor"
-              data-id="23c2b1a" data-element_type="widget" data-widget_type="text-editor.default">
-              <div class="elementor-widget-container">
-                <style>
-                  /*! elementor - v3.6.5 - 27-04-2022 */
-                  .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
-                    background-color: #818a91;
-                    color: #fff
-                  }
-
-                  .elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
-                    color: #818a91;
-                    border: 3px solid;
-                    background-color: transparent
-                  }
-
-                  .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap {
-                    margin-top: 8px
-                  }
-
-                  .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter {
-                    width: 1em;
-                    height: 1em
-                  }
-
-                  .elementor-widget-text-editor .elementor-drop-cap {
-                    float: left;
-                    text-align: center;
-                    line-height: 1;
-                    font-size: 50px
-                  }
-
-                  .elementor-widget-text-editor .elementor-drop-cap-letter {
-                    display: inline-block
-                  }
-                </style>
-                <p>{{ $banner->description ?? '' }}</p>
-              </div>
-            </div>
-            <div
-              class="elementor-element elementor-element-72b3c95 elementor-align-left elementor-widget elementor-widget-button"
-              data-id="72b3c95" data-element_type="widget" data-widget_type="button.default">
-              <div class="elementor-widget-container">
-                <div class="elementor-button-wrapper">
-                  <a href="{{ route('about') }}" class="elementor-button-link elementor-button elementor-size-sm"
-                    role="button">
-                    <span class="elementor-button-content-wrapper">
-                      <span class="elementor-button-text">Giới thiệu</span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="elementor-element elementor-element-013285c e-grid-align-left elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
-              data-id="013285c" data-element_type="widget" data-widget_type="social-icons.default">
-              <div class="elementor-widget-container">
-
-                <div class="elementor-social-icons-wrapper elementor-grid">
-                  @if (setting('social-network.facebook'))
-                    <span class="elementor-grid-item">
-                      <a href="{{ setting('social-network.facebook') }}"
-                        class="elementor-icon elementor-social-icon elementor-social-icon-facebook-square elementor-repeater-item-d8f634e"
-                        target="_blank">
-                        <span class="elementor-screen-only">Facebook-f</span>
-                        <i class="fab fa-facebook-f"></i> </a>
-                    </span>
-                  @endif
-                  @if (setting('social-network.youtube'))
-                    <span class="elementor-grid-item">
-                      <a href="{{ setting('social-network.youtube') }}"
-                        class="elementor-icon elementor-social-icon elementor-social-icon-facebook-square elementor-repeater-item-d8f634e"
-                        target="_blank">
-                        <span class="elementor-screen-only">Youtube</span>
-                        <i class="fab fa-youtube"></i> </a>
-                    </span>
-                  @endif
-                  @if (setting('social-network.twitter'))
-                    <span class="elementor-grid-item">
-                      <a href="{{ setting('social-network.twitter') }}"
-                        class="elementor-icon elementor-social-icon elementor-social-icon-facebook-square elementor-repeater-item-d8f634e"
-                        target="_blank">
-                        <span class="elementor-screen-only">Twitter</span>
-                        <i class="fab fa-twitter"></i> </a>
-                    </span>
-                  @endif
-                  @if (setting('social-network.google-plus'))
-                    <span class="elementor-grid-item">
-                      <a href="{{ setting('social-network.google-plus') }}"
-                        class="elementor-icon elementor-social-icon elementor-social-icon-facebook-square elementor-repeater-item-d8f634e"
-                        target="_blank">
-                        <span class="elementor-screen-only">Google +</span>
-                        <i class="fab fa-google-plus-g"></i> </a>
-                    </span>
-                  @endif
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-0921f8f"
-          data-id="0921f8f" data-element_type="column">
-          <div class="elementor-widget-wrap">
-          </div>
-        </div>
-      </div>
+      class="elementor-section elementor-top-section elementor-element elementor-element-01eb206 elementor-section-boxed elementor-section-height-default elementor-section-height-default" style="background: none;"
+      >
+      <img style="margin-top: 75px;" src="{{ Voyager::image($banner_images[0] ?? '') }}" alt="">
     </section>
     
     <section
@@ -233,6 +82,7 @@
             </div>
           </div>
         </div>
+       
         <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-2a6f942"
           data-id="2a6f942" data-element_type="column"
           data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -345,7 +195,7 @@
               class="elementor-section elementor-inner-section elementor-element elementor-element-b231325 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
               data-id="b231325" data-element_type="section">
               <div class="elementor-container elementor-column-gap-no">
-                <div
+                <!-- <div
                   class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-084e0ef"
                   data-id="084e0ef" data-element_type="column"
                   data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -371,27 +221,27 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <div
-                  class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-792ecbb"
-                  data-id="792ecbb" data-element_type="column">
+                  class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-792ecbb"
+                  data-id="792ecbb" data-element_type="column" style="width:100%;">
                   <div class="elementor-widget-wrap elementor-element-populated">
-                    <div class="elementor-element elementor-element-55ff231 elementor-widget elementor-widget-heading"
+                    <!-- <div class="elementor-element elementor-element-55ff231 elementor-widget elementor-widget-heading"
                       data-id="55ff231" data-element_type="widget" data-widget_type="heading.default">
                       <div class="elementor-widget-container">
                         <h2 class="elementor-heading-title elementor-size-default">Sản phẩm của chúng tôi</h2>
                       </div>
-                    </div>
+                    </div> -->
                     <div
                       class="elementor-element elementor-element-4872ec9 elementor-widget elementor-widget-text-editor"
                       data-id="4872ec9" data-element_type="widget" data-widget_type="text-editor.default">
-                      <div class="elementor-widget-container">{{ $about->excerpt }}</div>
+                      <div class="elementor-widget-container" style="font-family: 'Font Awesome 5 Free';font-size: 18px;">{{ $about->excerpt }}</div>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
-            <div class="elementor-element elementor-element-4300898 elementor-widget elementor-widget-jkit_progress_bar"
+            <!-- <div class="elementor-element elementor-element-4300898 elementor-widget elementor-widget-jkit_progress_bar"
               data-id="4300898" data-element_type="widget" data-widget_type="jkit_progress_bar.default">
               <div class="elementor-widget-container">
                 <div class="jeg-elementor-kit jkit-progress-bar jeg_module_7_2_62bbb2f6c7b5e">
@@ -431,7 +281,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div
               class="elementor-element elementor-element-c9048bf elementor-align-left elementor-widget elementor-widget-button"
               data-id="c9048bf" data-element_type="widget" data-widget_type="button.default">
@@ -916,7 +766,7 @@
                     <div class="elementor-element elementor-element-9c43a1a elementor-widget elementor-widget-heading"
                       data-id="9c43a1a" data-element_type="widget" data-widget_type="heading.default">
                       <div class="elementor-widget-container">
-                        <h5 class="elementor-heading-title elementor-size-default">
+                        <h5 class="elementor-heading-title elementor-size-default" style="    padding-top: 40px;">
                           Phản hồi của khách hàng</h5>
                       </div>
                     </div>
@@ -929,7 +779,7 @@
                     <div
                       class="elementor-element elementor-element-837587c elementor-widget elementor-widget-text-editor"
                       data-id="837587c" data-element_type="widget" data-widget_type="text-editor.default">
-                      <div class="elementor-widget-container">{{$report->description}}</div>
+                      <!-- <div class="elementor-widget-container">{{$report->description}}</div> -->
                     </div>
                   </div>
                 </div>
@@ -1226,14 +1076,14 @@
                                     </a></div>
                                   <div class="jkit-postblock-content">
                                     <h3 class="jkit-post-title"><a
-                                        href="{{ route('posts.show', $post->slug)}}">{{ $post->title }}</a></h3>
+                                        href="{{ route('posts.show', $post->slug)}}" style="font-family: 'Font Awesome 5 Free';">{{ $post->title }}</a></h3>
                                     <div class="jkit-post-meta">
                                       <div class="jkit-meta-date icon-position-before">
                                         <i aria-hidden="true" class="fas fa-clock"></i>{{date('F d, Y', strtotime($post->created_at))}}
                                       </div>
                                     </div>
                                     <div class="jkit-post-excerpt">
-                                      <p>{{$post->excerpt}}</p>
+                                      <p style="font-family: 'Font Awesome 5 Free';">{{$post->excerpt}}</p>
                                     </div>
                                     <div class="jkit-post-meta-bottom">
                                       <div class="jkit-meta-readmore icon-position-after">

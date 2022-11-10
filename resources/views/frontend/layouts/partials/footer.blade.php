@@ -9,7 +9,7 @@
       <section
         class="elementor-section elementor-top-section elementor-element elementor-element-103bf9b elementor-section-boxed elementor-section-height-default elementor-section-height-default"
         data-id="103bf9b" data-element_type="section"
-        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-color:#7d4427">
         <div class="elementor-background-overlay"></div>
         <div class="elementor-container elementor-column-gap-default">
           <div
@@ -33,12 +33,12 @@
                             class="attachment-full size-full" alt="" loading="lazy"/>
                         </div>
                       </div>
-                      <div
+                      <!-- <div
                         class="elementor-element elementor-element-ad0b945 elementor-widget elementor-widget-text-editor"
                         data-id="ad0b945" data-element_type="widget" data-widget_type="text-editor.default">
                         <div class="elementor-widget-container">{{ setting('site.description') }}</div>
-                      </div>
-                      <div
+                      </div> -->
+                      <!-- <div
                         class="elementor-element elementor-element-6507e88 e-grid-align-left e-grid-align-tablet-left elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
                         data-id="6507e88" data-element_type="widget" data-widget_type="social-icons.default">
                         <div class="elementor-widget-container">
@@ -77,7 +77,7 @@
                             @endif
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                   <div
@@ -295,7 +295,7 @@
                         data-id="f66ae3d" data-element_type="widget" data-widget_type="text-editor.default">
                         <div class="elementor-widget-container">{{ setting('site.address') }}</div>
                       </div>
-                      <div
+                      <!-- <div
                         class="elementor-element elementor-element-ee27cd1 elementor-align-left elementor-widget elementor-widget-button"
                         data-id="ee27cd1" data-element_type="widget" data-widget_type="button.default">
                         <div class="elementor-widget-container">
@@ -310,34 +310,18 @@
                             </a>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                   <div
                     class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-66ae557"
                     data-id="66ae557" data-element_type="column">
                     <div class="elementor-widget-wrap elementor-element-populated">
-                      <div
-                        class="elementor-element elementor-element-399a03b elementor-widget elementor-widget-heading"
-                        data-id="399a03b" data-element_type="widget" data-widget_type="heading.default">
-                        <div class="elementor-widget-container">
-                          <h2 class="elementor-heading-title elementor-size-default">Bản đồ</h2>
-                        </div>
-                      </div>
-                      <div
-                        class="elementor-element elementor-element-8c46bda elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
-                        data-id="8c46bda" data-element_type="widget" data-widget_type="divider.default">
-                        <div class="elementor-widget-container">
-                          <div class="elementor-divider">
-                            <span class="elementor-divider-separator">
-                            </span>
-                          </div>
-                        </div>
-                      </div>
+                      
                       <style>
                         .footer_map iframe {
                           width: 100% !important;
-                          height: 250px !important;
+                          height: 250px  !important;
                         }
                       </style>
                       <div class="footer_map">

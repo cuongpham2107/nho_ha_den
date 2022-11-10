@@ -26,9 +26,9 @@ class HomeController extends Controller
     public function index()
     {
         $banner= Banner::where('type', 'home')->first();
-        $page1 = Page::where(['slug' => 'nguyen-lieu', 'status' => 'ACTIVE'])->first();
-        $page2 = Page::where(['slug' => 'gia-vi', 'status' => 'ACTIVE'])->first();
-        $page3 = Page::where(['slug' => 'thanh-phan', 'status' => 'ACTIVE'])->first();
+        $page1 = Page::where(['slug' => 'cach-che-bien', 'status' => 'ACTIVE'])->first();
+        $page2 = Page::where(['slug' => 'cach-bao-quan', 'status' => 'ACTIVE'])->first();
+        $page3 = Page::where(['slug' => 'cong-dung', 'status' => 'ACTIVE'])->first();
         $about = Page::where(['slug' => 'about', 'status' => 'ACTIVE'])->first();
         $service = Page::where(['slug' => 'services', 'status' => 'ACTIVE'])->first();
         $services = \App\Service::where('active', 1)->inRandomOrder()->limit(4)->get();

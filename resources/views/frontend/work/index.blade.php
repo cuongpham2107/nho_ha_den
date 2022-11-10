@@ -358,7 +358,7 @@
                     display: inline-block
                   }
                 </style>
-                <p>{{$banner->description ?? ''}}</p>
+                <!-- <p>{{$banner->description ?? ''}}</p> -->
               </div>
             </div>
           </div>

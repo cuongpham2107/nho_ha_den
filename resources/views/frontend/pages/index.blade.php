@@ -288,25 +288,7 @@
                 </div>
               </div>
             </div>
-            {{-- <div
-              class="elementor-element elementor-element-3293fd3 elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon"
-              data-id="3293fd3" data-element_type="widget" data-widget_type="icon.default">
-              <div class="elementor-widget-container">
-                <div class="elementor-icon-wrapper">
-                  <div class="elementor-icon">
-                    <i aria-hidden="true" class="jki jki-user-alt-solid"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="elementor-element elementor-element-09e3056 elementor-widget__width-auto elementor-widget elementor-widget-jkit_post_author"
-              data-id="09e3056" data-element_type="widget" data-widget_type="jkit_post_author.default">
-              <div class="elementor-widget-container">
-                <div class="jeg-elementor-kit jkit-post-author jeg_module_502_2_62bbb3aa53b61"><span
-                    class="post-author ">John Doe</span></div>
-              </div>
-            </div> --}}
+            
             <div
               class="elementor-element elementor-element-6b4e60a elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon"
               data-id="6b4e60a" data-element_type="widget" data-widget_type="icon.default">
@@ -338,7 +320,7 @@
           data-id="019207f" data-element_type="column"
           data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
           <div class="elementor-widget-wrap elementor-element-populated">
-            <div
+            <!-- <div
               class="elementor-element elementor-element-cb36b0f elementor-widget elementor-widget-jkit_post_featured_image"
               data-id="cb36b0f" data-element_type="widget" data-widget_type="jkit_post_featured_image.default">
               <div class="elementor-widget-container">
@@ -349,46 +331,15 @@
                     </div>
                 </div>
               </div>
+            </div> -->
+            <div style="margin-top:100px">
+              {!! $page->body !!}
             </div>
-            {!! $page->body !!}
-            <section
+            <section style="margin-top:100px"
               class="elementor-section elementor-inner-section elementor-element elementor-element-aa44b71 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
               data-id="aa44b71" data-element_type="section">
               <div class="elementor-container elementor-column-gap-default">
-                {{-- <div
-                  class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-67347a4"
-                  data-id="67347a4" data-element_type="column">
-                  <div class="elementor-widget-wrap elementor-element-populated">
-                    <div class="elementor-element elementor-element-63ab1d5 elementor-widget elementor-widget-heading"
-                      data-id="63ab1d5" data-element_type="widget" data-widget_type="heading.default">
-                      <div class="elementor-widget-container">
-                        <h5 class="elementor-heading-title elementor-size-default">Tags :
-                        </h5>
-                      </div>
-                    </div>
-                    <div
-                      class="elementor-element elementor-element-882fbd1 elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon"
-                      data-id="882fbd1" data-element_type="widget" data-widget_type="icon.default">
-                      <div class="elementor-widget-container">
-                        <div class="elementor-icon-wrapper">
-                          <div class="elementor-icon">
-                            <i aria-hidden="true" class="fas fa-tag"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="elementor-element elementor-element-00a9a5d elementor-widget__width-auto elementor-widget elementor-widget-jkit_post_terms"
-                      data-id="00a9a5d" data-element_type="widget" data-widget_type="jkit_post_terms.default">
-                      <div class="elementor-widget-container">
-                        <div class="jeg-elementor-kit jkit-post-terms jeg_module_502_5_62bbb3aa61f6b">
-                          <span class="post-terms"><span class="term-list ">news</span>,<span
-                              class="term-list ">tea</span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> --}}
+                
                 <div
                   class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-017ce31"
                   data-id="017ce31" data-element_type="column">
@@ -424,198 +375,7 @@
                 </div>
               </div>
             </section>
-            {{-- <div
-              class="elementor-element elementor-element-f6c8f0c elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
-              data-id="f6c8f0c" data-element_type="widget" data-widget_type="divider.default">
-              <div class="elementor-widget-container">
-                <style>
-                  /*! elementor - v3.6.5 - 27-04-2022 */
-                  .elementor-widget-divider {
-                    --divider-border-style: none;
-                    --divider-border-width: 1px;
-                    --divider-color: #2c2c2c;
-                    --divider-icon-size: 20px;
-                    --divider-element-spacing: 10px;
-                    --divider-pattern-height: 24px;
-                    --divider-pattern-size: 20px;
-                    --divider-pattern-url: none;
-                    --divider-pattern-repeat: repeat-x
-                  }
-
-                  .elementor-widget-divider .elementor-divider {
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex
-                  }
-
-                  .elementor-widget-divider .elementor-divider__text {
-                    font-size: 15px;
-                    line-height: 1;
-                    max-width: 95%
-                  }
-
-                  .elementor-widget-divider .elementor-divider__element {
-                    margin: 0 var(--divider-element-spacing);
-                    -ms-flex-negative: 0;
-                    flex-shrink: 0
-                  }
-
-                  .elementor-widget-divider .elementor-icon {
-                    font-size: var(--divider-icon-size)
-                  }
-
-                  .elementor-widget-divider .elementor-divider-separator {
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-                    margin: 0;
-                    direction: ltr
-                  }
-
-                  .elementor-widget-divider--view-line_icon .elementor-divider-separator,
-                  .elementor-widget-divider--view-line_text .elementor-divider-separator {
-                    -webkit-box-align: center;
-                    -ms-flex-align: center;
-                    align-items: center
-                  }
-
-                  .elementor-widget-divider--view-line_icon .elementor-divider-separator:after,
-                  .elementor-widget-divider--view-line_icon .elementor-divider-separator:before,
-                  .elementor-widget-divider--view-line_text .elementor-divider-separator:after,
-                  .elementor-widget-divider--view-line_text .elementor-divider-separator:before {
-                    display: block;
-                    content: "";
-                    border-bottom: 0;
-                    -webkit-box-flex: 1;
-                    -ms-flex-positive: 1;
-                    flex-grow: 1;
-                    border-top: var(--divider-border-width) var(--divider-border-style) var(--divider-color)
-                  }
-
-                  .elementor-widget-divider--element-align-left .elementor-divider .elementor-divider-separator>.elementor-divider__svg:first-of-type {
-                    -webkit-box-flex: 0;
-                    -ms-flex-positive: 0;
-                    flex-grow: 0;
-                    -ms-flex-negative: 100;
-                    flex-shrink: 100
-                  }
-
-                  .elementor-widget-divider--element-align-left .elementor-divider-separator:before {
-                    content: none
-                  }
-
-                  .elementor-widget-divider--element-align-left .elementor-divider__element {
-                    margin-left: 0
-                  }
-
-                  .elementor-widget-divider--element-align-right .elementor-divider .elementor-divider-separator>.elementor-divider__svg:last-of-type {
-                    -webkit-box-flex: 0;
-                    -ms-flex-positive: 0;
-                    flex-grow: 0;
-                    -ms-flex-negative: 100;
-                    flex-shrink: 100
-                  }
-
-                  .elementor-widget-divider--element-align-right .elementor-divider-separator:after {
-                    content: none
-                  }
-
-                  .elementor-widget-divider--element-align-right .elementor-divider__element {
-                    margin-right: 0
-                  }
-
-                  .elementor-widget-divider:not(.elementor-widget-divider--view-line_text):not(.elementor-widget-divider--view-line_icon) .elementor-divider-separator {
-                    border-top: var(--divider-border-width) var(--divider-border-style) var(--divider-color)
-                  }
-
-                  .elementor-widget-divider--separator-type-pattern {
-                    --divider-border-style: none
-                  }
-
-                  .elementor-widget-divider--separator-type-pattern.elementor-widget-divider--view-line .elementor-divider-separator,
-                  .elementor-widget-divider--separator-type-pattern:not(.elementor-widget-divider--view-line) .elementor-divider-separator:after,
-                  .elementor-widget-divider--separator-type-pattern:not(.elementor-widget-divider--view-line) .elementor-divider-separator:before,
-                  .elementor-widget-divider--separator-type-pattern:not([class*=elementor-widget-divider--view]) .elementor-divider-separator {
-                    width: 100%;
-                    min-height: var(--divider-pattern-height);
-                    -webkit-mask-size: var(--divider-pattern-size) 100%;
-                    mask-size: var(--divider-pattern-size) 100%;
-                    -webkit-mask-repeat: var(--divider-pattern-repeat);
-                    mask-repeat: var(--divider-pattern-repeat);
-                    background-color: var(--divider-color);
-                    -webkit-mask-image: var(--divider-pattern-url);
-                    mask-image: var(--divider-pattern-url)
-                  }
-
-                  .elementor-widget-divider--no-spacing {
-                    --divider-pattern-size: auto
-                  }
-
-                  .elementor-widget-divider--bg-round {
-                    --divider-pattern-repeat: round
-                  }
-
-                  .rtl .elementor-widget-divider .elementor-divider__text {
-                    direction: rtl
-                  }
-                </style>
-                <div class="elementor-divider">
-                  <span class="elementor-divider-separator">
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-aaf5194 elementor-widget elementor-widget-jkit_post_comment"
-              data-id="aaf5194" data-element_type="widget" data-widget_type="jkit_post_comment.default">
-              <div class="elementor-widget-container">
-                <div class="jeg-elementor-kit jkit-post-comment jeg_module_502_7_62bbb3aa67c13">
-                  <section id="comments" class="comments-area">
-
-
-
-                    <div id="respond" class="comment-respond">
-                      <h2 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow"
-                            id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel
-                            reply</a></small></h2>
-                      <form action="https://templatekit.jegtheme.com/sometea/wp-comments-post.php" method="post"
-                        id="commentform" class="comment-form" novalidate>
-                        <p class="comment-notes"><span id="email-notes">Your email address
-                            will not be published.</span> <span class="required-field-message"
-                            aria-hidden="true">Required
-                            fields are marked <span class="required" aria-hidden="true">*</span></span></p>
-                        <p class="comment-form-comment"><label for="comment">Comment <span class="required"
-                              aria-hidden="true">*</span></label>
-                          <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea>
-                        </p>
-                        <p class="comment-form-author"><label for="author">Name <span class="required"
-                              aria-hidden="true">*</span></label>
-                          <input id="author" name="author" type="text" value="" size="30"
-                            maxlength="245" required />
-                        </p>
-                        <p class="comment-form-email"><label for="email">Email <span class="required"
-                              aria-hidden="true">*</span></label>
-                          <input id="email" name="email" type="email" value="" size="30"
-                            maxlength="100" aria-describedby="email-notes" required />
-                        </p>
-                        <p class="comment-form-url"><label for="url">Website</label> <input id="url"
-                            name="url" type="url" value="" size="30" maxlength="200" /></p>
-                        <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent"
-                            name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label
-                            for="wp-comment-cookies-consent">Save
-                            my name, email, and website in this browser for the next
-                            time I comment.</label></p>
-                        <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit"
-                            value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='502'
-                            id='comment_post_ID' />
-                          <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-                        </p>
-                      </form>
-                    </div><!-- #respond -->
-
-                  </section><!-- .comments-area -->
-                </div>
-              </div>
-            </div> --}}
+          
           </div>
         </div>
       </div>

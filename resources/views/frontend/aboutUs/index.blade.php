@@ -94,7 +94,7 @@
     class="elementor-section elementor-top-section elementor-element elementor-element-47ddced elementor-section-boxed elementor-section-height-default elementor-section-height-default"
     data-id="47ddced" data-element_type="section"
     data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"
-    style="background-image: url({{Voyager::image(json_decode($banner->images)[0])}}">
+    style="background-image: url({{Voyager::image(json_decode($banner->images)[0] ?? '')}})">
     <div class="elementor-background-overlay"></div>
     <div class="elementor-container elementor-column-gap-no">
       <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-20e4438"
@@ -176,7 +176,7 @@
                   display: inline-block
                 }
               </style>
-              <p>{{$banner->description}}</p>
+              <!-- <p>{{$banner->description}}</p> -->
             </div>
           </div>
         </div>
@@ -189,7 +189,7 @@
     </div>
   </section>
 
-  @if($banner2 != null)
+  <!-- @if($banner2 != null)
   <section
     class="elementor-section elementor-top-section elementor-element elementor-element-2d059425 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
     data-id="2d059425" data-element_type="section">
@@ -255,11 +255,11 @@
       </div>
     </div>
   </section>
-  @endif
+  @endif -->
 
   <section
     class="elementor-section elementor-top-section elementor-element elementor-element-24c648f elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-    data-id="24c648f" data-element_type="section">
+    data-id="24c648f" data-element_type="section" style="padding: 40px 0px 20px 0px;">
     <div class="elementor-container elementor-column-gap-no">
       <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-077b304"
         data-id="077b304" data-element_type="column">
@@ -279,10 +279,10 @@
           <div class="elementor-element elementor-element-c086838 elementor-widget elementor-widget-text-editor"
             data-id="c086838" data-element_type="widget" data-widget_type="text-editor.default">
             <div class="elementor-widget-container">
-              <p>{{ $about->excerpt }}</p>
+              <p style="font-family: 'Font Awesome 5 Free';">{{ $about->excerpt }}</p>
             </div>
           </div>
-          <section
+          <!-- <section
             class="elementor-section elementor-inner-section elementor-element elementor-element-279fe01 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
             data-id="279fe01" data-element_type="section">
             <div class="elementor-container elementor-column-gap-no">
@@ -376,7 +376,7 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> -->
         </div>
       </div>
       <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-15f2018"
@@ -392,50 +392,15 @@
                 loading="lazy"/>
             </div>
           </div>
-          {{-- <section
-            class="elementor-section elementor-inner-section elementor-element elementor-element-4e11a96 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-            data-id="4e11a96" data-element_type="section">
-            <div class="elementor-container elementor-column-gap-no">
-              <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-99ab6db"
-                data-id="99ab6db" data-element_type="column">
-                <div class="elementor-widget-wrap">
-                </div>
-              </div>
-              <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-f6d6cd9"
-                data-id="f6d6cd9" data-element_type="column"
-                data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                <div class="elementor-widget-wrap elementor-element-populated">
-                  <div class="elementor-element elementor-element-b7811e9 elementor-widget elementor-widget-image"
-                    data-id="b7811e9" data-element_type="widget"
-                    data-widget_type="image.default">
-                    <div class="elementor-widget-container">
-                      <img width="914" height="199"
-                        src="assets/uploads/sites/168/2021/09/signature.png"
-                        class="attachment-full size-full" alt="" loading="lazy"
-                        srcset="assets/uploads/sites/168/2021/09/signature.png 914w, assets/uploads/sites/168/2021/09/signature-300x65.png 300w, assets/uploads/sites/168/2021/09/signature-768x167.png 768w, assets/uploads/sites/168/2021/09/signature-800x174.png 800w"
-                        sizes="(max-width: 914px) 100vw, 914px" />
-                    </div>
-                  </div>
-                  <div class="elementor-element elementor-element-f3ef90c elementor-widget elementor-widget-jkit_heading"
-                    data-id="f3ef90c" data-element_type="widget"
-                    data-widget_type="jkit_heading.default">
-                    <div class="elementor-widget-container">
-                      <div
-                        class="jeg-elementor-kit jkit-heading  align-right align-tablet- align-mobile-left jeg_module_663_4_62bbb3a2e96dc">
-                        <div class="heading-section-title ">
-                          <h2 class="heading-title">George Shaw</h2>
-                        </div>
-                        <h3 class="heading-section-subtitle  style-color">Sometea CEO
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> --}}
         </div>
       </div>
+    </div>
+  </section>
+  <section
+    class="elementor-section elementor-top-section elementor-element elementor-element-24c648f elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+    data-id="24c648f" data-element_type="section">
+    <div class="elementor-container elementor-column-gap-no" style="display: flow-root !important;">
+      <p>{!! $about->body !!}</p>
     </div>
   </section>
 

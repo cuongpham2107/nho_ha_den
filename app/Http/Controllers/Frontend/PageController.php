@@ -48,6 +48,7 @@ class PageController extends Controller
   public function show($slug)
   {
     $banner = \App\Banner::where('type', 'page')->first();
+    // dd($banner);
     $page = Page::where('status','ACTIVE')->where('slug', $slug)->first();
 
     if ($page == null) {
